@@ -47,14 +47,14 @@ RUN \
     && \
     cd /tmp \
     wget https://github.com/exodus454/Jellyfin-Transcodes-cleanup/archive/refs/heads/main.zip \ 
-    mkdir -p /opt/ffmpeg-wrap \
+    mkdir -p /config/ffmpeg-wrap \
     unzip main.zip -d /tmp \
-    mv Jellyfin-Transcodes-cleanup-main/* /opt/ffmpeg-wrap/ \
-    cd /opt/ffmpeg-wrap \
+    mv Jellyfin-Transcodes-cleanup-main/* /config/ffmpeg-wrap \
+    cd /config/ffmpeg-wrap \
     chmod +x ffmpeg.wrap \
     chmod +x run.sh \
     chmod +x bufmon.sh \
-    ln -sf /opt/ffmpeg-wrap/ffmpeg.wrap /usr/lib/jellyfin-ffmpeg/ffmpeg.wrap \
+    ln -sf /config/ffmpeg-wrap/ffmpeg.wrap /usr/lib/jellyfin-ffmpeg/ffmpeg.wrap \
     ln -sf /usr/lib/jellyfin-ffmpeg/ffprobe /usr/lib/jellyfin-ffmpeg/ffprobe.wrap \
     && \
     apt-get remove -y gnupg2 \
