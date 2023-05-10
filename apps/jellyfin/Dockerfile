@@ -43,13 +43,13 @@ RUN \
     apt-get -qq install -y \
         jellyfin-server="${VERSION}*" \
         jellyfin-web \
-        jellyfin-ffmpeg6 \
+        jellyfin-ffmpeg5 \
     && \
     cd /tmp \
-    wget https://github.com/exodus454/Jellyfin-Transcodes-cleanup/archive/refs/heads/main.zip \ 
+    wget https://github.com/exodus454/Jellyfin-Transcodes-cleanup/archive/refs/heads/main.zip \
     mkdir -p /config/ffmpeg-wrap \
     unzip main.zip -d /tmp \
-    mv Jellyfin-Transcodes-cleanup-main/* /config/ffmpeg-wrap \
+    cp -r Jellyfin-Transcodes-cleanup-main/* /config/ffmpeg-wrap \
     cd /config/ffmpeg-wrap \
     chmod +x ffmpeg.wrap \
     chmod +x run.sh \
