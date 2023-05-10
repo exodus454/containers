@@ -19,7 +19,7 @@ RUN \
             && echo 'deb [arch=amd64] https://repositories.intel.com/graphics/ubuntu jammy main' > /etc/apt/sources.list.d/intel.list \
             && \
             export ARCH='amd64'; \
-            export EXTRA_INSTALL_ARG='intel-media-va-driver-non-free nvidia-opencl-icd-384 i965-va-driver mesa-va-drivers'; \
+            export EXTRA_INSTALL_ARG='intel-media-va-driver-non-free   libnvidia-compute-390  i965-va-driver mesa-va-drivers'; \
         ;; \
         'linux/arm64') \
             apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 6587FFD6536B8826E88A62547876AE518CBCF2F2 \
@@ -43,7 +43,7 @@ RUN \
     apt-get -qq install -y \
         jellyfin-server="${VERSION}*" \
         jellyfin-web \
-        jellyfin-ffmpeg5 \
+        jellyfin-ffmpeg6 \
     && \
     cd /tmp \
     wget https://github.com/exodus454/Jellyfin-Transcodes-cleanup/archive/refs/heads/main.zip \
