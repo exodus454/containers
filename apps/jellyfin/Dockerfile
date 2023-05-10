@@ -46,7 +46,7 @@ RUN \
         jellyfin-ffmpeg6 \
     && \
     cd /tmp \
-    wget https://github.com/exodus454/Jellyfin-Transcodes-cleanup/archive/refs/heads/main.zip && \ 
+    wget https://github.com/exodus454/Jellyfin-Transcodes-cleanup/archive/refs/heads/main.zip \ 
     mkdir -p /opt/ffmpeg-wrap \
     unzip main.zip -d /tmp \
     mv Jellyfin-Transcodes-cleanup-main/* /opt/ffmpeg-wrap/ \
